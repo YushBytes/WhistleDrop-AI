@@ -1,0 +1,36 @@
+[project]
+name = "whistledrop-ai"
+version = "0.1.0"
+description = "Anonymous reporting and intelligent case triage system"
+requires-python = ">=3.12,<3.13"
+
+# Dependencies are managed in requirements.txt / requirements-dev.txt.
+# This file carries tooling configuration only.
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = [
+    "integration: tests that require a running PostgreSQL container",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # import sorting
+    "UP",  # pyupgrade
+    "B",   # bugbear
+    "S",   # bandit security checks
+]
+ignore = [
+    "S101",  # assert is expected in tests
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S105", "S106"]  # test fixtures may contain dummy credentials

@@ -1,0 +1,13 @@
+# Runtime dependencies — pinned for reproducible installs.
+# Install with:  pip install -r requirements.txt
+
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+pydantic==2.13.5
+pydantic-settings==2.15.0
+
+# Added in later phases:
+#   Phase 1  sqlalchemy, psycopg[binary], alembic
+#   Phase 3  passlib[bcrypt], pyjwt
+#   Phase 5  slowapi
+#   Phase 7  scikit-learn, pandas, numpy, joblib

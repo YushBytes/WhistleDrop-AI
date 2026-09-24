@@ -1,0 +1,10 @@
+# Development and test dependencies.
+# Install with:  pip install -r requirements.txt -r requirements-dev.txt
+
+pytest==9.1.1
+httpx2==2.13.1         # HTTP client used by fastapi.testclient
+ruff==0.16.8           # linting + formatting + basic security checks
+
+# Added in later phases:
+#   Phase 1  pytest-asyncio (if async DB sessions are used)
+#   Phase 8  pytest-cov
