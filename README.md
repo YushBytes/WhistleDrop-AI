@@ -1,5 +1,7 @@
 # WhistleDrop AI
 
+![CI](https://github.com/YushBytes/WhistleDrop-AI/actions/workflows/ci.yml/badge.svg)
+
 **Anonymous Reporting & Intelligent Case Triage System**
 
 A confidential reporting backend. Anyone can submit a report **without an
