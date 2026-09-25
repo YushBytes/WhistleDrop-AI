@@ -659,4 +659,4 @@ WhistleDrop/
 
 ## License
 
-MIT
+MIT — see [`LICENSE`](LICENSE).
