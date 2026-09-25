@@ -5,6 +5,6 @@ pytest==9.1.1
 httpx2==2.13.1         # HTTP client used by fastapi.testclient
 ruff==0.16.8           # linting + formatting + basic security checks
 
-# Added in later phases:
-#   Phase 1  pytest-asyncio (if async DB sessions are used)
-#   Phase 8  pytest-cov
+python-dotenv==1.2.3   # lets the test suite read TEST_DATABASE_URL from .env
+
+pytest-cov==7.0.0      # coverage reporting; see [tool.coverage] in pyproject.toml

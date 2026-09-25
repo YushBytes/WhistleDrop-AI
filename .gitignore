@@ -35,6 +35,7 @@ ENV/
 .coverage.*
 htmlcov/
 coverage.xml
+coverage.json
 .tox/
 .nox/
 
@@ -54,6 +55,11 @@ ml/artifacts/
 *.joblib
 *.pkl
 .ipynb_checkpoints/
+
+# Real report text exported for training must never be committed. The synthetic
+# development dataset (ml/data/*.csv) is generated and safe; anything under
+# data/private/ is assumed to be real and confidential.
+ml/data/private/
 
 # ---------------------------------------------------------------------------
 # Editors / OS
