@@ -6,12 +6,16 @@ as features are added — each phase registers its router here.
 
 from fastapi import APIRouter
 
-from app.api.v1.routers import health
+from app.api.v1.routers import auth, cases, health, moderation, reports
 
 api_router = APIRouter()
-api_router.include_router(health.router)
 
-# Registered in later phases:
-#   Phase 2 — reports (anonymous submission), cases (case-code lookup)
-#   Phase 3 — auth (moderator login)
-#   Phase 4 — moderation (queue, filtering, status updates)
+# Public, unauthenticated.
+api_router.include_router(health.router)
+api_router.include_router(reports.router)
+api_router.include_router(cases.router)
+
+# Moderator-facing. Login is public by necessity; everything under
+# /moderation requires the bearer token it issues.
+api_router.include_router(auth.router)
+api_router.include_router(moderation.router)
